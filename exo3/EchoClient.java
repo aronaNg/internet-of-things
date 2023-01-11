@@ -42,10 +42,9 @@ class EchoClient  {
 		// dans le cas ligne vide
 		
 		ps.println(line);
-		// recv server answer if not stop
 		if (!stop) {
 		    line = br.readLine();
-		    System.out.println("server answers: "+line);
+		    System.out.println("reponses serveur: "+line);
 		}
 	    }
 	    consoleIn.close();

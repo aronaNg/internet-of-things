@@ -42,12 +42,12 @@ class EchoServer  {
 		    ps.close();
 		}
 		catch(IOException e) {
-		    System.out.println("cannot create streams, or communicate with client :"+e.getMessage());
+		    System.out.println("communication impossible avec le client :"+e.getMessage());
 		}
 	    }
 	}
 	catch(IOException e) {
-	    System.out.println("cannot accept connections: "+e.getMessage());
+	    System.out.println("connexion refusee: "+e.getMessage());
 	}
     }
 }

@@ -19,7 +19,7 @@ class EchoServer  {
 	    conn = new ServerSocket(Integer.parseInt(args[0]));
 	}
 	catch(IOException e) {
-	    System.out.println("cannot create server socket : "+e.getMessage());
+	    System.out.println("impossibile de creer server socket : "+e.getMessage());
 	    System.exit(1);
 	}
 	
@@ -59,7 +59,7 @@ class EchoServer  {
 	    }
 	}
 	catch(IOException e) {
-	    System.out.println("cannot accept connections: "+e.getMessage());
+	    System.out.println("connexion refusee: "+e.getMessage());
 	}
     }
 }

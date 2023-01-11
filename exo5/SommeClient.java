@@ -19,7 +19,7 @@ class SommeClient  {
 	    br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
 	}
 	catch(IOException e) {
-	    System.out.println("cannot connect to servers: "+e.getMessage());
+	    System.out.println("connexion serveur impossible: "+e.getMessage());
 	    System.exit(1);
 	}
 
@@ -65,7 +65,7 @@ class SommeClient  {
 			System.out.println("somme = "+line);
 		    }
 		    else {
-			System.out.println("malformed request !");
+			System.out.println("requete malformee !");
 		    }
 		}
 	    }

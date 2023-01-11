@@ -19,7 +19,7 @@ class SommeClient  {
 	    br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
 	}
 	catch(IOException e) {
-	    System.out.println("cannot connect to server, or create streams: "+e.getMessage());
+	    System.out.println("connexion serveur impossible: "+e.getMessage());
 	    System.exit(1);
 	}
 
@@ -39,13 +39,13 @@ class SommeClient  {
 		else  if (line.equals("")) {
 		    stop = true;
 		}
-		// send even empty string to signal the end to the server
+	
 		ps.println(line);
-		// recv server answer if not stop
+
 		if (!stop) {
 		    line = br.readLine();
 		    if (line.equals("REQ_ERR")) {
-			System.out.println("malformed request: server rejected it !");
+			System.out.println("requete malformee !");
 		    }
 		    else {
 			System.out.println("somme = "+line);

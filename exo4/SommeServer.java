@@ -19,7 +19,7 @@ class SommeServer  {
 	    conn = new ServerSocket(Integer.parseInt(args[0]));
 	}
 	catch(IOException e) {
-	    System.out.println("cannot create server socket : "+e.getMessage());
+	    System.out.println("impossible de creer server socket : "+e.getMessage());
 	    System.exit(1);
 	}
 	
@@ -28,7 +28,7 @@ class SommeServer  {
 	    while (true) {
 		sock = conn.accept();
 
-		try { // dedicated try for communiation with client
+		try { 
 		    br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
 		    ps = new PrintStream(sock.getOutputStream());
 
@@ -46,7 +46,6 @@ class SommeServer  {
 			    stop = true;
 			}
 			else {
-			    // compute the somme
 			    String[] lstInt = line.split(",");
 			    int somme = 0;
 			    int x = 0;
@@ -79,7 +78,7 @@ class SommeServer  {
 	    }
 	}
 	catch(IOException e) {
-	    System.out.println("cannot accept connections: "+e.getMessage());
+	    System.out.println("connexion refusee: "+e.getMessage());
 	}
     }
 }

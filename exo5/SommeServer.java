@@ -19,7 +19,7 @@ class SommeServer  {
 	    conn = new ServerSocket(Integer.parseInt(args[0]));
 	}
 	catch(IOException e) {
-	    System.out.println("cannot create server socket : "+e.getMessage());
+	    System.out.println("impossible de creer server socket : "+e.getMessage());
 	    System.exit(1);
 	}
 	
@@ -46,30 +46,30 @@ class SommeServer  {
 			    stop = true;
 			}
 			else {
-			    // get number of int
+		
 			    int nb = Integer.parseInt(line);
-			    int sum = 0;
+			    int somme = 0;
 			    int x = 0;
-			    for(int i=0;i<nb;i++) {
+			    for(int i=0;i<nb;	i++) {
 				line = br.readLine();
 				x = Integer.parseInt(line);
-				sum += x;
+				somme += x;
 			    }
 
-			    System.out.println("envoie "+sum+" au client");
-			    ps.println(sum);
+			    System.out.println("envoie "+somme+" au client");
+			    ps.println(somme);
 			}
 		    }
 		    br.close();
 		    ps.close();		    
 		}
 		catch(IOException e) {
-		    System.out.println("communicationimpossible avec le client: "+e.getMessage());
+		    System.out.println("communication impossible avec le client: "+e.getMessage());
 		}
 	    }
 	}
 	catch(IOException e) {
-	    System.out.println("cannot accept connections: "+e.getMessage());
+	    System.out.println("connexion refusee: "+e.getMessage());
 	}
     }
 }
