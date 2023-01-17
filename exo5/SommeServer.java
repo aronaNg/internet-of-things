@@ -25,6 +25,7 @@ class SommeServer  {
 	
 	try {
 	    String line ="";
+		// pour continuer l ecoute
 	    while (true) {
 		sock = conn.accept();
 
@@ -32,7 +33,7 @@ class SommeServer  {
 		    br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
 		    ps = new PrintStream(sock.getOutputStream());
 
-		    boolean stop = false;
+		    Boolean stop = false;
 		    while(! stop) {
 			line = br.readLine();
 

@@ -53,22 +53,22 @@ class SommeClient  {
 			}
 			if (!ok) break; 
 		    }
-		    
 
 		    if (ok) {
 			ps.println(lstInt.length);
 			for(int i=0;i<lstInt.length;i++) {
 			    ps.println(lstInt[i]);
 			}
-			// recv answer
+
 			line = br.readLine();
 			System.out.println("somme = "+line);
 		    }
 		    else {
-			System.out.println("requete malformee !");
+			System.out.println("requete malformée!");
 		    }
 		}
 	    }
+
 	    consoleIn.close();
 	    ps.close();
 	    br.close();
@@ -78,3 +78,4 @@ class SommeClient  {
 	}
     }
 }
+
