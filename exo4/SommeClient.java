@@ -39,7 +39,6 @@ class SommeClient  {
 		else  if (line.equals("")) {
 		    stop = true;
 		}
-	
 		ps.println(line);
 
 		if (!stop) {
